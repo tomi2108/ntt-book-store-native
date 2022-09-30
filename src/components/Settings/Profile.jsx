@@ -5,11 +5,9 @@ import AppContext from "context/AppContext";
 
 import { useContext } from "react";
 import { View } from "react-native";
-import { useNavigate } from "react-router-native";
 
 const Profile = () => {
-  const { styles, user } = useContext(AppContext);
-  let redirect = useNavigate();
+  const { styles, user, redirect } = useContext(AppContext);
 
   return (
     <View style={styles.settings.profile}>
