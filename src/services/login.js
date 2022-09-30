@@ -1,10 +1,9 @@
-import axios from "axios";
 import { host } from "services/controller.js";
 
+import axios from "axios";
 
 
 const url = `${host}/api/login`;
-
 
 export const logIn = async (username, password) => {
   try {

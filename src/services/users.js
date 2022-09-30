@@ -1,8 +1,9 @@
-import axios from "axios";
 import { host } from "services/controller.js";
 
-const url = `${host}/api/users`;
+import axios from "axios";
 
+
+const url = `${host}/api/users`;
 
 export const createUser = async (user) => {
   try {
