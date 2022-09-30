@@ -83,10 +83,11 @@ export const styledtheme = (theme) => {
       text:{ highlight:"#3b9cf7", color:COLORS.details.primary, fontWeight:"500", fontSize:11, marginBottom:8 }
     },
     settings:{
-      container:{ height:200 },
+      container:{ height:500 },
       profile:{ height:150, justifyContent:"flex-start", alignItems:"center", flexDirection:"row" },
       profilePicture:{ height:70,width:70, backgroundColor:"blue", marginHorizontal:20 },
-      options:{ height:50,flexDirection:"row",justifyContent:"space-between",alignItems:"center" },
+      list:{ height:300,alignItems:"center",justifyContent:"flex-start",flexDirection:"column" },
+      options:{ width:"100%", height:50,flexDirection:"row",justifyContent:"space-between",alignItems:"center" },
       description:{ marginLeft:20,flexDirection:"row",alignItems:"center",justifyContent:"center" },
       optionIcon:{ height:30,width:30, backgroundColor:"blue" },
       optionTitle:{ marginLeft:10 },
