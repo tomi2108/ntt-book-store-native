@@ -15,6 +15,9 @@ import UserStorage from "utils/UserStorage";
 
 const Context = () => {
 
+  const themeStorage = new ThemeStorage("ThemeStorage");
+  const userStorage = new UserStorage("UserStorage");
+
   const [books] = useBooks();
   const [cart, cartActions] = useCart(user);
   const [favorites,favoritesActions] = useFavorites(user);
@@ -25,8 +28,6 @@ const Context = () => {
 
   const redirect = useRedirect(setPage);
 
-  const themeStorage = new ThemeStorage("ThemeStorage");
-  const userStorage = new UserStorage("UserStorage");
 
   const context = { redirect, page, theme, styles, toggleTheme, user, userActions, cart, cartActions, favorites, favoritesActions, books };
 

@@ -64,7 +64,9 @@ export const styledtheme = (theme) => {
     contrast:COLORS.background.contrast,
     colorScheme:theme,
     textComponent:{ color:COLORS.text.primary },
+    backButton:{ alignSelf:"flex-start",position:"absolute",top:0 },
     reset:{ fontFamily:"" },
+    notification:{ color:COLORS.red,fontSize:14,fontWeight:"bold" },
     header:{
       container:{ height:130, backgroundColor:COLORS.background.secondary, paddingTop:Constants.statusBarHeight, paddingRight:15, paddingLeft:15 },
       searchBar:{ justifyContent:"center", alignItems:"center", placeHolderColor:COLORS.text.placeHolder, flexDirection:"row", height:40 },
@@ -92,6 +94,16 @@ export const styledtheme = (theme) => {
       optionIcon:{ height:30,width:30, backgroundColor:"blue" },
       optionTitle:{ marginLeft:10 },
       optionButton:{ marginRight:20 }
+    },
+    form:{
+      container: { height:"100%", width:"100%", backgroundColor:COLORS.background.primary,justifyContent:"center",alignItems:"center" },
+      text:{ marginTop:10,placeHolderColor:COLORS.text.placeHolder, height: 40, width:"85%", marginRight:4, backgroundColor:COLORS.white, shadowColor:COLORS.details.primary, shadowOffset:{ width:2,height:2 } ,shadowOpacity:0.5, shadowRadius:4, elevation:20, padding: 10 },
+      button:{ fontSize:20, marginTop:12 },
+      datePicker:{ marginVertical:30,alignItems:"center",justifyContent:"space-evenly",flexDirection:"row", width:"100%" },
+      footer:{
+        text:{ marginTop:30 },
+        link:{ marginTop:5 }
+      }
     },
     displayIf : (condition) => {return { visibility:condition?"":"hidden" };}
   };

@@ -17,7 +17,7 @@ const Profile = () => {
         <Text>
           {
             user?`${user.cart.length} items in your cart`:
-              <Link onPress={() => redirect("/home")} title="Log in"/>
+              <Link onPress={() => redirect("/login")} title="Log in"/>
           }
         </Text>
       </View>
