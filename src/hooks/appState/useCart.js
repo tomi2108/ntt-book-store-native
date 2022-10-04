@@ -58,5 +58,9 @@ export const useCart = (user) => {
     }
   };
 
-  return [cart, { addToCart, removeFromCart, removeOneFromCart }];
+  const getCartLength = () => {
+    return cart.reduce((prev,item) => prev+item.quantity,0);
+  };
+
+  return [cart, { addToCart, removeFromCart, removeOneFromCart, getCartLength }];
 };

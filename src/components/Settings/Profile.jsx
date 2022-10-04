@@ -7,7 +7,10 @@ import { useContext } from "react";
 import { View } from "react-native";
 
 const Profile = () => {
-  const { styles, user, redirect } = useContext(AppContext);
+  const { user, styles, cartActions, redirect } = useContext(AppContext);
+
+
+  const cartLength = cartActions.getCartLength();
 
   return (
     <View style={styles.settings.profile}>
@@ -16,7 +19,7 @@ const Profile = () => {
         <Text>{user?user.username:"Not logged in"}</Text>
         <Text>
           {
-            user?`${user.cart.length} items in your cart`:
+            user?`${cartLength} item${cartLength===1?"":"s"} in your cart`:
               <Link onPress={() => redirect("/login")} title="Log in"/>
           }
         </Text>
