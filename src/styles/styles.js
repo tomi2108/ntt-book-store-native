@@ -117,12 +117,15 @@ export const styledtheme = (theme) => {
       title:{ fontSize:18 , fontWeight:"600" },
       stock:{ position:"absolute",left:0,bottom:40 },
       price:{ position:"absolute",bottom:15, fontSize:18, color:COLORS.blue,fontWeight:"800" },
-      button:{ alignSelf:"flex-end",position:"absolute",right:10,bottom:10,backgroundColor:COLORS.blue,width:30,height:30,justifyContent:"center",alignItems:"center",borderRadius:5 },
-      buttonError:{ backgroundColor:COLORS.red },
-      buttonComplete:{ backgroundColor:COLORS.green },
+      button:{ alignSelf:"flex-end",position:"absolute",right:10,bottom:10 },
       buttonText:{ color:COLORS.white,fontSize:20 },
-      buttonDisabled:{ backgroundColor:COLORS.grey },
       outOfStockText:{ position:"absolute",left:0,bottom:40 , color:COLORS.red ,fontWeight:"500" }
+    },
+    transactionButton:{
+      base:{ backgroundColor:COLORS.blue, width:30, height:30, justifyContent:"center", alignItems:"center", borderRadius:5 },
+      disabled:{ backgroundColor:COLORS.grey },
+      error:{ backgroundColor:COLORS.red },
+      complete:{ backgroundColor:COLORS.green }
     },
     displayIf : (condition) => {return { visibility:condition?"":"hidden" };}
   };

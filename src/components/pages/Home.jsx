@@ -24,7 +24,7 @@ const Home = () => {
         {isLoading? <ActivityIndicator/>:
           <>
             <Text style={styles.home.title}>Popular</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <ScrollView snapToAlignment="start" decelerationRate={0} snapToInterval={280} horizontal showsHorizontalScrollIndicator={false}>
 
               {
                 books.slice(0,4).map((b) => <BookItem key={b.id} book={b}/>)

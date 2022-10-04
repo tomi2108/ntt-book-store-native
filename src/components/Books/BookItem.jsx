@@ -1,4 +1,4 @@
-import AddToCartButton from "components/Books/AddToCartButton";
+import TransactionButton from "components/Books/TransactionButton";
 import Text from "components/utils/Text";
 import AppContext from "context/AppContext";
 import { useContext } from "react";
@@ -6,7 +6,7 @@ import { Image, View } from "react-native";
 
 
 const BookItem = ({ book }) => {
-  const { styles } = useContext(AppContext);
+  const { styles, user, cartActions } = useContext(AppContext);
   const outOfStock = book.copiesInStock === 0;
 
   return (
@@ -20,7 +20,7 @@ const BookItem = ({ book }) => {
         }
         <Text style={styles.bookCard.price}>{`$${book.price}`}</Text>
       </View>
-      <AddToCartButton book={book}/>
+      <TransactionButton style={styles.bookCard.button} params={[book]} transaction={cartActions.addToCart} disabledWhen={outOfStock || !user} pendingLabel="+" completeLabel="✓" errorLabel="⚠"/>
     </View>
   );
 };
