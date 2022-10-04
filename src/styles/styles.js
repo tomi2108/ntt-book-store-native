@@ -3,8 +3,10 @@ import Constants from "expo-constants";
 const NEUTRAL_COLORS = {
   white:"#ffffff",
   black:"#000000",
+  grey:"#adadad",
   blue:"#3683ff",
-  red:"#fe6a6a"
+  red:"#fe6a6a",
+  green:"#63de3e"
 };
 
 const DARK_COLORS = {
@@ -72,7 +74,7 @@ export const styledtheme = (theme) => {
       searchBar:{ justifyContent:"center", alignItems:"center", placeHolderColor:COLORS.text.placeHolder, flexDirection:"row", height:40 },
       title:{  fontSize:22, fontWeight:"500" },
       input: { height: 40, width:"85%", marginRight:4, backgroundColor:COLORS.white, borderRadius:50, shadowColor:COLORS.details.primary, shadowOffset:{ width:2,height:2 }, shadowOpacity:0.5, shadowRadius:4, elevation:20, padding: 10 },
-      cartIcon:{ backgroundColor:"blue", height:46, width:46 },
+      cartIcon:{ backgroundColor:COLORS.blue, height:46, width:46 },
       userContainer:{ marginTop:20 }
     },
     main:{
@@ -81,17 +83,17 @@ export const styledtheme = (theme) => {
     footer:{
       container:{ backgroundColor:COLORS.background.secondary, height:80, flexDirection:"row", justifyContent:"space-evenly", alignItems:"center" },
       iconWrapper:{ flexDirection:"column", justifyContent:"center", alignItems:"center" },
-      icon:{ height:30, width:30, marginBottom:3, backgroundColor:"blue" },
+      icon:{ height:30, width:30, marginBottom:3, backgroundColor:COLORS.blue },
       text:{ highlight:"#3b9cf7", color:COLORS.details.primary, fontWeight:"500", fontSize:11, marginBottom:8 }
     },
     settings:{
       container:{ height:500 },
       profile:{ height:150, justifyContent:"flex-start", alignItems:"center", flexDirection:"row" },
-      profilePicture:{ height:70,width:70, backgroundColor:"blue", marginHorizontal:20 },
+      profilePicture:{ height:70,width:70, backgroundColor:COLORS.blue, marginHorizontal:20 },
       list:{ height:300,alignItems:"center",justifyContent:"flex-start",flexDirection:"column" },
       options:{ width:"100%", height:50,flexDirection:"row",justifyContent:"space-between",alignItems:"center" },
       description:{ marginLeft:20,flexDirection:"row",alignItems:"center",justifyContent:"center" },
-      optionIcon:{ height:30,width:30, backgroundColor:"blue" },
+      optionIcon:{ height:30,width:30, backgroundColor:COLORS.blue },
       optionTitle:{ marginLeft:10 },
       optionButton:{ marginRight:20 }
     },
@@ -104,6 +106,23 @@ export const styledtheme = (theme) => {
         text:{ marginTop:30 },
         link:{ marginTop:5 }
       }
+    },
+    home:{
+      title:{ fontSize:35,fontWeight:"800",marginBottom:15 }
+    },
+    bookCard:{
+      container:{ marginHorizontal:10,borderRadius:10,flexDirection:"row", width:260 ,height:160,backgroundColor:COLORS.background.secondary,padding:20 },
+      image:{ width:75,height:120,borderRadius:7 },
+      details:{ width:"70%", marginLeft:10,height:140 },
+      title:{ fontSize:18 , fontWeight:"600" },
+      stock:{ position:"absolute",left:0,bottom:40 },
+      price:{ position:"absolute",bottom:15, fontSize:18, color:COLORS.blue,fontWeight:"800" },
+      button:{ alignSelf:"flex-end",position:"absolute",right:10,bottom:10,backgroundColor:COLORS.blue,width:30,height:30,justifyContent:"center",alignItems:"center",borderRadius:5 },
+      buttonError:{ backgroundColor:COLORS.red },
+      buttonComplete:{ backgroundColor:COLORS.green },
+      buttonText:{ color:COLORS.white,fontSize:20 },
+      buttonDisabled:{ backgroundColor:COLORS.grey },
+      outOfStockText:{ position:"absolute",left:0,bottom:40 , color:COLORS.red ,fontWeight:"500" }
     },
     displayIf : (condition) => {return { visibility:condition?"":"hidden" };}
   };

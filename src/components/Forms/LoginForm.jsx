@@ -1,12 +1,13 @@
+import TextInput from "components/forms/TextInput";
+import BackButton from "components/utils/BackButton";
 import Link from "components/utils/Link";
+import Notification from "components/utils/Notification";
 import AppContext from "context/AppContext";
 import { useFields } from "hooks/utils/useFields";
-
-import BackButton from "components/utils/BackButton";
-import Notification from "components/utils/Notification";
 import { useNotification } from "hooks/utils/useNotification";
+
 import { useContext, useState } from "react";
-import { ActivityIndicator, TextInput, View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 import FormFooter from "./FormFooter";
 
 
@@ -23,7 +24,9 @@ const LoginForm = ({ setRegistered }) => {
   const handleError = (err) => {
     const errorMessage = err.message ?? err;
     setNotification(errorMessage);
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    },1000);
   };
 
 
@@ -46,8 +49,8 @@ const LoginForm = ({ setRegistered }) => {
       {isLoading? <ActivityIndicator/> :
         <>
           <Notification show={notification}/>
-          <TextInput placeholderTextColor={styles.form.text.placeHolderColor} placeholder="Username" style={styles.form.text} value={fields.username.value} onChange={(evt) => textChange(evt,"username")} />
-          <TextInput placeholderTextColor={styles.form.text.placeHolderColor} placeholder="Password" style={styles.form.text}  onChange={(evt) => textChange(evt,"password")} />
+          <TextInput field="username" fields={fields} textChange={textChange}/>
+          <TextInput field="password" fields={fields} textChange={textChange} secure/>
           <Link style={styles.form.button} title="Log in" onPress={handleLogin}  />
           <FormFooter title="Register" text="Don't have an account yet?" onPress={() => setRegistered(false)}/>
         </>

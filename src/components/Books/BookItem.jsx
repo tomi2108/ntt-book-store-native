@@ -1,13 +1,27 @@
+import AddToCartButton from "components/Books/AddToCartButton";
 import Text from "components/utils/Text";
+import AppContext from "context/AppContext";
+import { useContext } from "react";
+import { Image, View } from "react-native";
 
 
-const BookItem = ({ item }) => {
+const BookItem = ({ book }) => {
+  const { styles } = useContext(AppContext);
+  const outOfStock = book.copiesInStock === 0;
+
   return (
-    <>
-      <Text>
-        {item.title}
-      </Text>
-    </>
+    <View style={styles.bookCard.container}>
+      <Image style={styles.bookCard.image} source={{ uri:book.imageUrl }} />
+      <View style={styles.bookCard.details}>
+        <Text style={styles.bookCard.title}>{book.title}</Text>
+        {outOfStock?
+          <Text style={styles.bookCard.outOfStockText}>Out of stock </Text>:
+          <Text style={styles.bookCard.stock}>{`${book.copiesInStock} in stock`}</Text>
+        }
+        <Text style={styles.bookCard.price}>{`$${book.price}`}</Text>
+      </View>
+      <AddToCartButton book={book}/>
+    </View>
   );
 };
 

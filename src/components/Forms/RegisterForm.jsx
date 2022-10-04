@@ -1,13 +1,14 @@
+import FormFooter from "components/Forms/FormFooter";
+import TextInput from "components/Forms/TextInput";
 import Link from "components/utils/Link";
+import Notification from "components/utils/Notification";
 import AppContext from "context/AppContext";
 import { useFields } from "hooks/utils/useFields";
+import { useNotification } from "hooks/utils/useNotification";
 import { createUser } from "services/users";
 
-import Notification from "components/utils/Notification";
-import { useNotification } from "hooks/utils/useNotification";
 import { useContext, useState } from "react";
-import { ActivityIndicator, Pressable, TextInput, View } from "react-native";
-import FormFooter from "./FormFooter";
+import { ActivityIndicator, Pressable, View } from "react-native";
 
 
 const RegisterForm = ({ setRegistered }) => {
@@ -25,7 +26,9 @@ const RegisterForm = ({ setRegistered }) => {
   const handleError = (err) => {
     const errorMessage = err.message ?? err;
     setNotification(errorMessage);
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    },1000);
   };
 
   const handleRegister = () => {
@@ -62,9 +65,9 @@ const RegisterForm = ({ setRegistered }) => {
       {isLoading? <ActivityIndicator/> :
         <>
           <Notification show={notification}/>
-          <TextInput placeholderTextColor={styles.form.text.placeHolderColor} placeholder="Username" style={styles.form.text} value={fields.username.value} onChangeText={(text) => textChange(text,"username")} />
-          <TextInput placeholderTextColor={styles.form.text.placeHolderColor} placeholder="Password" style={styles.form.text}  onChangeText={(text) => textChange(text,"password")} />
-          <TextInput placeholderTextColor={styles.form.text.placeHolderColor} placeholder="Confirm password" style={styles.form.text}  onChangeText={(text) => textChange(text,"confirmPassword")} />
+          <TextInput field="username" fields={fields} textChange={textChange}  />
+          <TextInput field="password" fields={fields} textChange={textChange} secure  />
+          <TextInput field="confirmPassword" fields={fields} textChange={textChange}  secure />
           <Link style={{ fontSize:20, marginTop:20 }} title="Register" onPress={handleRegister}  />
           <FormFooter title="Log in" text="Already have an account?" onPress={() => setRegistered(true)}/>
         </>

@@ -19,10 +19,10 @@ const Context = () => {
   const userStorage = new UserStorage("UserStorage");
 
   const [books] = useBooks();
+  const [user, userActions] = useUser(userStorage);
   const [cart, cartActions] = useCart(user);
   const [favorites,favoritesActions] = useFavorites(user);
   const [page,setPage] = useState("Home");
-  const [user, userActions] = useUser(userStorage);
 
   const { theme, styles, toggleTheme } = useTheme(themeStorage);
 
