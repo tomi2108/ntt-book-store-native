@@ -6,13 +6,13 @@ import { useContext } from "react";
 import { Pressable, View } from "react-native";
 
 
-const OptionPressable = ({ onPress ,title }) => {
+const OptionPressable = ({ onPress ,title,Icon }) => {
   const { styles } = useContext(AppContext);
   return (
     <Pressable style={styles.settings.options} onPress={onPress}>
       <View>
         <View  style={styles.settings.description}>
-          <View style={styles.settings.optionIcon}></View>
+          {Icon}
           <Text style={styles.settings.optionTitle} >{title}</Text>
         </View>
       </View>

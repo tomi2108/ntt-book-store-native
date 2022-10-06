@@ -1,5 +1,5 @@
 import BookItem from "components/Books/BookItem";
-import SearchBar from "components/Search/SearchBar";
+import Header from "components/Nav/Header";
 import Text from "components/utils/Text";
 import AppContext from "context/AppContext";
 import { useContext, useEffect, useState } from "react";
@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <SearchBar/>
+      <Header title="Ntt bookstore" displayUser/>
       <ScrollView contentContainerStyle={{ padding:25  }}>
         {isLoading? <ActivityIndicator/>:
           <>

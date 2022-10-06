@@ -1,3 +1,4 @@
+import ProfilePicture from "components/Icons/ProfilePicture.svg";
 import Link from "components/utils/Link";
 import Text from "components/utils/Text";
 
@@ -14,7 +15,9 @@ const Profile = () => {
 
   return (
     <View style={styles.settings.profile}>
-      <View style={styles.settings.profilePicture}></View>
+      <View style={styles.settings.profilePicture}>
+        <ProfilePicture height={70} width={70} fill={styles.highlight} />
+      </View>
       <View>
         {user &&
           <Text style={styles.settings.username}>{user.username}</Text>

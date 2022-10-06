@@ -1,18 +1,17 @@
-import Header from "components/Nav/Header";
+import SearchBar from "components/Search/SearchBar";
 
 import { ScrollView } from "react-native";
 
 
-const New = () => {
+const Browse = () => {
   return (
     <>
-      <Header title="New" displayUser/>
+      <SearchBar/>
       <ScrollView  contentContainerStyle={{ padding:25  }}>
-
       </ScrollView>
     </>
 
   );
 };
 
-export default New;
+export default Browse;

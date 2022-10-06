@@ -6,7 +6,8 @@ const NEUTRAL_COLORS = {
   grey:"#adadad",
   blue:"#3683ff",
   red:"#fe6a6a",
-  green:"#63de3e"
+  green:"#63de3e",
+  highlight:"#3b9cf7"
 };
 
 const DARK_COLORS = {
@@ -62,17 +63,18 @@ const LIGHT_COLORS = {
 export const styledtheme = (theme) => {
   const COLORS = theme === "LIGHT" ? LIGHT_COLORS : DARK_COLORS;
   return {
+    highlight:COLORS.highlight,
+    icon:{ color:COLORS.text.primary },
     outOfStockText:{ color:COLORS.red ,fontWeight:"500" },
     priceText:{ color:COLORS.blue,fontWeight:"800" },
     backButton:{ alignSelf:"flex-start",position:"absolute",top:0 },
-    colorScheme:theme,
+    notTheme:theme==="LIGHT"?"Dark":"Light",
     contrast:COLORS.background.contrast,
     link:{ color:COLORS.blue, borderBottomWidth:1, borderBottomColor:COLORS.blue },
     notification:{ color:COLORS.red,fontSize:14,fontWeight:"bold" },
     reset:{ fontFamily:"" },
     textComponent:{ color:COLORS.text.primary },
     header:{
-      cartIcon:{ backgroundColor:COLORS.blue, height:30, width:30 },
       container:{ height:140, backgroundColor:COLORS.background.secondary, paddingTop:Constants.statusBarHeight + 10, paddingRight:15, paddingLeft:15 },
       input: { fontSize:12, height: 30, width:"85%", marginRight:4, backgroundColor:COLORS.white, borderRadius:50, shadowColor:COLORS.details.primary, shadowOffset:{ width:2,height:2 }, shadowOpacity:0.5, shadowRadius:4, elevation:20 , paddingHorizontal:10 },
       searchBar:{ justifyContent:"center", alignItems:"center", placeHolderColor:COLORS.text.placeHolder, flexDirection:"row", height:30 },
@@ -84,20 +86,19 @@ export const styledtheme = (theme) => {
     },
     footer:{
       container:{ backgroundColor:COLORS.background.secondary, height:80, flexDirection:"row", justifyContent:"space-evenly", alignItems:"center" },
-      icon:{ height:30, width:30, marginBottom:3, backgroundColor:COLORS.blue },
+      icon:{ marginBottom:3 },
       iconWrapper:{ flexDirection:"column", justifyContent:"center", alignItems:"center" },
-      text:{ highlight:"#3b9cf7", color:COLORS.details.primary, fontWeight:"500", fontSize:11, marginBottom:8 }
+      text:{  color:COLORS.details.primary, fontWeight:"500", fontSize:11, marginBottom:8 }
     },
     settings:{
       description:{ marginLeft:20,flexDirection:"row",alignItems:"center",justifyContent:"center" },
       list:{ alignItems:"center",justifyContent:"flex-start" },
       login:{ fontSize:25 },
       optionButton:{ marginRight:20 },
-      optionIcon:{ height:30,width:30, backgroundColor:COLORS.blue },
       options:{ width:"100%", height:50,flexDirection:"row",justifyContent:"space-between",alignItems:"center" },
-      optionTitle:{ marginLeft:10 },
+      optionTitle:{ marginLeft:10,fontSize:16 },
       profile:{ height:150, justifyContent:"flex-start", alignItems:"center", flexDirection:"row" },
-      profilePicture:{ height:70,width:70, backgroundColor:COLORS.blue, marginHorizontal:20 },
+      profilePicture:{ marginHorizontal:20 },
       userDetails:{ marginTop:10 },
       username:{ fontSize:30,fontWeight:"500" }
     },

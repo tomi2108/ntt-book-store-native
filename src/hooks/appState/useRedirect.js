@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-native";
 
-const APPBAR_PAGES = ["Home","More","Liked","New"];
+const APPBAR_PAGES = ["Home","More","Liked","Browse"];
 
 
 export const useRedirect = (setPage) => {
