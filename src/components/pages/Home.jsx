@@ -1,4 +1,4 @@
-import BookItem from "components/Books/BookItem";
+import FeaturedBooks from "components/Books/FeaturedBooks";
 import Header from "components/Nav/Header";
 import Text from "components/utils/Text";
 import AppContext from "context/AppContext";
@@ -24,11 +24,7 @@ const Home = () => {
         {isLoading? <ActivityIndicator/>:
           <>
             <Text style={styles.home.title}>Recently added</Text>
-            <ScrollView snapToAlignment="start" decelerationRate={0} snapToInterval={280} horizontal showsHorizontalScrollIndicator={false}>
-              {
-                [...books].reverse().slice(0,5).map((b) => <BookItem key={b.id} book={b}/>)
-              }
-            </ScrollView>
+            <FeaturedBooks books={[...books].reverse().slice(0,5)}/>
           </>
         }
       </ScrollView>

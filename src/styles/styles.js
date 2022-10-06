@@ -133,12 +133,14 @@ export const styledtheme = (theme) => {
     bookDetails:{
       container:{ justifyContent:"flex-start",alignItems:"center", padding:25  },
       image:{ width:280, height:420,borderRadius:7 } ,
-      title:{ alignSelf:"flex-start", fontSize:25,fontWeight:"500", marginBottom:3 } ,
-      author: { alignSelf:"flex-start", fontSize:20,fontWeight:"400", marginBottom:25,color:COLORS.text.secondary },
+      title:{ alignSelf:"flex-start", fontSize:25,fontWeight:"500", marginTop:20 } ,
+      author: { alignSelf:"flex-start", fontSize:20,fontWeight:"400", marginBottom:25,marginTop:15,color:COLORS.text.secondary },
       stock: { alignSelf:"flex-end", fontSize:14  },
       description:{ alignSelf:"flex-start", fontSize:15 },
       price:{ alignSelf:"flex-end",fontSize:40,marginTop:15 },
-      button:{ alignSelf:"flex-end",height:60,width:150 }
+      addButton:{ alignSelf:"flex-end",height:60,width:150 },
+      likeButton:{ borderWidth:0.5,borderRadius:5,borderColor:"#fff",padding:10 },
+      buttonContainer:{ width:"100%", flexDirection:"row",alignItems:"center", justifyContent:"space-between" }
     },
     displayIf : (condition) => {return { visibility:condition?"":"hidden" };}
   };

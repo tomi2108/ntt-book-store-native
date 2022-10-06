@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { Image, TouchableOpacity, View } from "react-native";
 
 
-const BookItem = ({ book }) => {
+const BookCard = ({ book }) => {
   const { styles, user, cartActions,redirect } = useContext(AppContext);
   const outOfStock = book.copiesInStock === 0;
 
@@ -16,11 +16,11 @@ const BookItem = ({ book }) => {
       <View style={styles.bookCard.details}>
         <Text style={styles.bookCard.title}>{book.title}</Text>
         <DisplayStock style={styles.bookCard.stock} book={book}/>
-        <Text style={styles.bookCard.price}>{`$${book.price}`}</Text>
+        <Text style={[styles.priceText,styles.bookCard.price]}>{`$${book.price}`}</Text>
       </View>
       <TransactionButton fontSize={20} style={styles.bookCard.button} params={[book]} transaction={cartActions.addToCart} disabledWhen={outOfStock || !user} pendingLabel="+" completeLabel="✓" errorLabel="⚠"/>
     </TouchableOpacity>
   );
 };
 
-export default BookItem;
+export default BookCard;
