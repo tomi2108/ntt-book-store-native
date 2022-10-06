@@ -16,11 +16,13 @@ const Profile = () => {
     <View style={styles.settings.profile}>
       <View style={styles.settings.profilePicture}></View>
       <View>
-        <Text>{user?user.username:"Not logged in"}</Text>
-        <Text>
+        {user &&
+          <Text style={styles.settings.username}>{user.username}</Text>
+        }
+        <Text style={styles.settings.userDetails}>
           {
             user?`${cartLength} item${cartLength===1?"":"s"} in your cart`:
-              <Link onPress={() => redirect("/login")} title="Log in"/>
+              <Link style={styles.settings.login} onPress={() => redirect("/login")} title="Log in"/>
           }
         </Text>
       </View>

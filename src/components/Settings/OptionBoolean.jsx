@@ -9,7 +9,7 @@ import { Switch, View } from "react-native";
 const OptionBoolean = ({ value,onValueChange,title }) => {
   const { styles } = useContext(AppContext);
   return (
-    <View style={styles.settings.options}>
+    <View style={styles.settings.options} onPress={onValueChange}>
       <View  style={styles.settings.description}>
         <View style={styles.settings.optionIcon}></View>
         <Text style={styles.settings.optionTitle} >{title}</Text>

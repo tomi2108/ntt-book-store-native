@@ -6,7 +6,7 @@ import Profile from "components/Settings/Profile";
 import AppContext from "context/AppContext";
 
 import { useContext } from "react";
-import { View } from "react-native";
+import { ScrollView } from "react-native";
 
 
 const Settings = () => {
@@ -19,16 +19,12 @@ const Settings = () => {
 
   return (
     <>
-      <View>
-        <Header title="Settings"/>
-        <View style={styles.settings.container}>
-          <Profile/>
-          <View style={styles.settings.list}>
-            <OptionBoolean value={theme==="DARK"} onValueChange={toggleTheme} title="Dark mode" />
-            { user && <Option onPress={handleLogOut} title="Log out" />}
-          </View>
-        </View>
-      </View>
+      <Header title="Settings"/>
+      <Profile/>
+      <ScrollView contentContainerStyle={styles.settings.list}>
+        <OptionBoolean value={theme==="DARK"} onValueChange={toggleTheme} title="Dark mode" />
+        { user && <Option onPress={handleLogOut} title="Log out" />}
+      </ScrollView>
     </>
   );
 };

@@ -9,7 +9,7 @@ const TRANSACTION_STATES = {
 };
 
 
-const TransactionButton = ({ params, transaction,disabledWhen, style,pendingLabel,completeLabel,errorLabel }) => {
+const TransactionButton = ({ params, transaction,disabledWhen, style,pendingLabel,completeLabel,errorLabel,fontSize=12 }) => {
   const { styles } = useContext(AppContext);
   const [transactionState,setTransactionState] = useState(TRANSACTION_STATES.PENDING);
   const [loading,setLoading] = useState(false);
@@ -49,10 +49,10 @@ const TransactionButton = ({ params, transaction,disabledWhen, style,pendingLabe
     <TouchableOpacity disabled={disabled || loading} style={butonStyles} onPress={handlePress}>
       { loading? <ActivityIndicator/> :
         pending?
-          <Text style={styles.bookCard.buttonText}>{pendingLabel}</Text>:
+          <Text style={{ color:"#fff", fontSize:fontSize }}>{pendingLabel}</Text>:
           complete?
-            <Text style={styles.bookCard.buttonText}>{completeLabel}</Text>:
-            <Text style={styles.bookCard.buttonText}>{errorLabel}</Text>
+            <Text style={{ color:"#fff",  fontSize:fontSize }}>{completeLabel}</Text>:
+            <Text style={{ color:"#fff", fontSize:fontSize }}>{errorLabel}</Text>
       }
     </TouchableOpacity>
   );

@@ -1,15 +1,15 @@
 import Header from "components/Nav/Header";
 
-import { View } from "react-native";
+import { ScrollView } from "react-native";
 
 
 const Liked = () => {
   return (
     <>
       <Header title="Liked" displayUser/>
-      <View>
+      <ScrollView  contentContainerStyle={{ padding:25  }}>
 
-      </View>
+      </ScrollView>
     </>
   );
 };

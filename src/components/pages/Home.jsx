@@ -4,7 +4,7 @@ import Text from "components/utils/Text";
 import AppContext from "context/AppContext";
 import { useContext, useEffect, useState } from "react";
 
-import { ActivityIndicator, ScrollView, View } from "react-native";
+import { ActivityIndicator, ScrollView } from "react-native";
 
 
 const Home = () => {
@@ -20,20 +20,18 @@ const Home = () => {
   return (
     <>
       <SearchBar/>
-      <View style={{ padding:20  }}>
+      <ScrollView contentContainerStyle={{ padding:25  }}>
         {isLoading? <ActivityIndicator/>:
           <>
-            <Text style={styles.home.title}>Popular</Text>
+            <Text style={styles.home.title}>Recently added</Text>
             <ScrollView snapToAlignment="start" decelerationRate={0} snapToInterval={280} horizontal showsHorizontalScrollIndicator={false}>
-
               {
-                books.slice(0,4).map((b) => <BookItem key={b.id} book={b}/>)
+                [...books].reverse().slice(0,5).map((b) => <BookItem key={b.id} book={b}/>)
               }
-
             </ScrollView>
           </>
         }
-      </View>
+      </ScrollView>
     </>
   );
 };

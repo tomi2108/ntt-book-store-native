@@ -1,27 +1,25 @@
-import TransactionButton from "components/Books/TransactionButton";
+import DisplayStock from "components/utils/DisplayStock";
 import Text from "components/utils/Text";
+import TransactionButton from "components/utils/TransactionButton";
 import AppContext from "context/AppContext";
 import { useContext } from "react";
-import { Image, View } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
 
 
 const BookItem = ({ book }) => {
-  const { styles, user, cartActions } = useContext(AppContext);
+  const { styles, user, cartActions,redirect } = useContext(AppContext);
   const outOfStock = book.copiesInStock === 0;
 
   return (
-    <View style={styles.bookCard.container}>
+    <TouchableOpacity onPress={() => redirect(`/book/${book.id}`)} style={styles.bookCard.container}>
       <Image style={styles.bookCard.image} source={{ uri:book.imageUrl }} />
       <View style={styles.bookCard.details}>
         <Text style={styles.bookCard.title}>{book.title}</Text>
-        {outOfStock?
-          <Text style={styles.bookCard.outOfStockText}>Out of stock </Text>:
-          <Text style={styles.bookCard.stock}>{`${book.copiesInStock} in stock`}</Text>
-        }
+        <DisplayStock style={styles.bookCard.stock} book={book}/>
         <Text style={styles.bookCard.price}>{`$${book.price}`}</Text>
       </View>
-      <TransactionButton style={styles.bookCard.button} params={[book]} transaction={cartActions.addToCart} disabledWhen={outOfStock || !user} pendingLabel="+" completeLabel="✓" errorLabel="⚠"/>
-    </View>
+      <TransactionButton fontSize={20} style={styles.bookCard.button} params={[book]} transaction={cartActions.addToCart} disabledWhen={outOfStock || !user} pendingLabel="+" completeLabel="✓" errorLabel="⚠"/>
+    </TouchableOpacity>
   );
 };
 

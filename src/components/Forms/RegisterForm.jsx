@@ -7,8 +7,9 @@ import { useFields } from "hooks/utils/useFields";
 import { useNotification } from "hooks/utils/useNotification";
 import { createUser } from "services/users";
 
+import BackButton from "components/utils/BackButton";
 import { useContext, useState } from "react";
-import { ActivityIndicator, Pressable, View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 
 
 const RegisterForm = ({ setRegistered }) => {
@@ -59,9 +60,7 @@ const RegisterForm = ({ setRegistered }) => {
 
   return (
     <View style={styles.form.container}>
-      <Pressable style={{ alignSelf:"flex-start",position:"absolute",top:0 }} onPress={() => redirect("/more")}>
-        <View style={{ height:40,width:40,backgroundColor:"blue" }}></View>
-      </Pressable>
+      <BackButton onPress={() => redirect("/more")} />
       {isLoading? <ActivityIndicator/> :
         <>
           <Notification show={notification}/>
