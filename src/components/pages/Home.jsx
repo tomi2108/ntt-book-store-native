@@ -20,11 +20,11 @@ const Home = () => {
   return (
     <>
       <Header title="Ntt bookstore" displayUser/>
-      <ScrollView contentContainerStyle={{ padding:25  }}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ padding:25  }}>
         {isLoading? <ActivityIndicator/>:
           <>
             <Text style={styles.home.title}>Recently added</Text>
-            <FeaturedBooks books={[...books].slice(0,5)}/>
+            <FeaturedBooks books={[...books].reverse().slice(0,5)}/>
           </>
         }
       </ScrollView>

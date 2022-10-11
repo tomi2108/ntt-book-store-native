@@ -12,7 +12,7 @@ import { ActivityIndicator, TouchableOpacity, View } from "react-native";
 import { deleteReview } from "services/books";
 import Rating from "./Rating";
 
-const Review = ({ review }) => {
+const Review = ({ review,setReviews }) => {
 
 
   const { styles, user } = useContext(AppContext);
@@ -21,6 +21,20 @@ const Review = ({ review }) => {
   const settingsModal = useModal();
   const confirmationModal = useModal();
   const errorModal = useModal();
+
+  const formatedDateWithHour = new Date(review.createdAt).toLocaleString(
+    "en-US",
+    {
+      day: "numeric",
+      month: "short",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+      timeZone: "America/Sao_Paulo"
+    }
+  );
+
+
 
   const handleDelete = () => {
     setLoading(true);
@@ -32,6 +46,7 @@ const Review = ({ review }) => {
         confirmationModal.showModal();
         setTimeout(() => {
           confirmationModal.hideModal();
+          setReviews(reviews => reviews.filter(r => r.id!==review.id));
         },2000);
       },500);
     })
@@ -54,7 +69,7 @@ const Review = ({ review }) => {
   return (
     <View style={styles.review.container}>
       <Text style={styles.review.username}>
-        {review.User.username} - {review.createdAt}
+        {review.User.username} - {formatedDateWithHour}
       </Text>
       <Text style={styles.review.text}>
         {review.text}

@@ -7,7 +7,7 @@ const Browse = () => {
   return (
     <>
       <SearchBar/>
-      <ScrollView  contentContainerStyle={{ padding:25  }}>
+      <ScrollView showsVerticalScrollIndicator={false}  contentContainerStyle={{ padding:25  }}>
       </ScrollView>
     </>
 

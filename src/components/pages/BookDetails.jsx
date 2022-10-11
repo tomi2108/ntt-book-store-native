@@ -23,14 +23,14 @@ const BookDetails = () => {
         !book? <ActivityIndicator/> :
           <>
             <Header title={book.title} displayUser/>
-            <ScrollView contentContainerStyle={styles.bookDetails.container}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.bookDetails.container}>
               <BookInfo book={book}/>
               <View style={styles.bookDetails.buttonContainer}>
                 { user? <LikeButton style={styles.bookDetails.likeButton} bookId={book.id}/> : <View/>}
                 <TransactionButton fontSize={20} style={styles.bookDetails.addButton} transaction={cartActions.addToCart} params={[book]} disabledWhen={!user || outOfStock } pendingLabel="Add to cart" completeLabel="Added" errorLabel="Not added" />
               </View>
               <BookRecommendations book={book} recommendations={recommendations}/>
-              <BookReviews book={book}/>
+              <BookReviews bookId={book.id} bookReviews={book.reviews}/>
             </ScrollView>
           </>
       }

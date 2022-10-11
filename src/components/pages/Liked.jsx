@@ -12,7 +12,7 @@ const Liked = () => {
   return (
     <>
       <Header title="Liked" displayUser/>
-      <ScrollView  contentContainerStyle={{ padding:25  }}>
+      <ScrollView showsVerticalScrollIndicator={false}  contentContainerStyle={{ padding:25  }}>
         {
           books.filter(b => favorites.includes(b.id)).map(b => <BookCard book={b} key={b.id}/> )
         }

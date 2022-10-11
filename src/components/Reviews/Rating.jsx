@@ -1,7 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
 import AppContext from "context/AppContext";
 import { useContext, useEffect, useState } from "react";
-import { View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 
 const Rating = ({ rating, disabled, size, style, onValueChange=null }) => {
 
@@ -10,8 +10,8 @@ const Rating = ({ rating, disabled, size, style, onValueChange=null }) => {
   const [value,setValue] = useState(rating);
   const [display,setDisplay] = useState(null);
 
-  const FullStar =(i) => <FontAwesome key={i} disabled={disabled} onPress={() => handlePress(i,true)} name="star" color={styles.COLORS.yellow } size={size} style={{ marginHorizontal:2 }}/>;
-  const EmptyStar =(i) => <FontAwesome  key={i} disabled={disabled} onPress={() => handlePress(i,false)} name="star" color={styles.COLORS.details.primary} size={size} style={{ marginHorizontal:2 }}/>;
+  const FullStar =(i) => <TouchableOpacity key={i} disabled={disabled}  onPress={() => handlePress(i,true)}><FontAwesome  disabled  name="star" color={styles.COLORS.yellow } size={size} style={{ marginHorizontal:2 }}/></TouchableOpacity >;
+  const EmptyStar =(i) => <TouchableOpacity key={i} disabled={disabled}  onPress={() => handlePress(i,true)}><FontAwesome   disabled name="star" color={styles.COLORS.details.primary} size={size} style={{ marginHorizontal:2 }}/></TouchableOpacity >;
 
   const handlePress = (index) => {
     setValue(index+1);

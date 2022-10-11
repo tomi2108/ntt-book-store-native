@@ -1,26 +1,52 @@
-import Rating from "components/Reviews/Rating";
 import Review from "components/Reviews/Review";
+import Text from "components/utils/Text";
+import AppContext from "context/AppContext";
 import { useModal } from "hooks/utils/useModal";
-import { useState } from "react";
-import { Button, Modal } from "react-native";
+import { useContext, useEffect, useState } from "react";
+import { Button, View } from "react-native";
+import BookReviewModal from "./BookReviewModal";
 
-const BookReviews = ({ book }) => {
+const BookReviews = ({ bookReviews,bookId }) => {
+  const { user } = useContext(AppContext);
+
+  console.log(bookReviews);
+
   const { modal,showModal,hideModal } = useModal();
 
-  const [rating,setRating] = useState(1);
 
+  const [reviews,setReviews] = useState(bookReviews);
+  const [reviewed,setReviewed] = useState(false);
+
+
+  useEffect(() => {
+    setReviews(bookReviews);
+  }, [bookReviews]);
+
+
+  useEffect(() => {
+    if(user){
+      setReviewed(reviews?.some((r) => r.User.username === user.username));
+    }
+  },[reviews,user]);
+
+  const sortByDate = (a, b) => {
+    return new Date(b.createdAt) - new Date(a.createdAt);
+  };
 
 
   return (
     <>
-      <Button title="Add review" onPress={showModal}/>
+      <View style={{ marginVertical:15 }}>
+        {!user? null:
+          reviewed? <Text>You have already reviewed this book</Text> :
+            <Button title="Add review" onPress={showModal}/>
+        }
+      </View>
       {
-        book.reviews?.map((r) => <Review  key={r.id} review={r}/> )
+        reviews &&
+        reviews.sort(sortByDate).map((r) => <Review setReviews={setReviews}  key={r.id} review={r}/> )
       }
-      <Modal animationType="slide" presentationStyle="fullScreen" visible={modal} onRequestClose={hideModal} >
-        <Rating onValueChange={(value) => setRating(value)} rating={rating} size={32} />
-        <Button title="Send" onPress={() => {console.log(rating);}}/>
-      </Modal>
+      <BookReviewModal setReviews={setReviews} bookId={bookId} modal={modal} hideModal={hideModal}/>
     </>
   );
 };

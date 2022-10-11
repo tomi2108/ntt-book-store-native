@@ -24,7 +24,7 @@ const Settings = () => {
     <>
       <Header title="Settings"/>
       <Profile/>
-      <ScrollView contentContainerStyle={styles.settings.list}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.settings.list}>
         <OptionBoolean value={theme==="DARK"} onValueChange={toggleTheme} title={`${styles.notTheme} mode`}
           IconOn={<Sun height={26} width={26} fill={styles.icon.color} />}
           IconOff ={<Moon height={26} width={26} fill={styles.icon.color} />} />
