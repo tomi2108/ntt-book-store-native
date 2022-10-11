@@ -67,7 +67,7 @@ export const styledtheme = (theme) => {
     icon:{ color:COLORS.text.primary },
     outOfStockText:{ color:COLORS.red ,fontWeight:"500" },
     priceText:{ color:COLORS.blue,fontWeight:"800" },
-    backButton:{ alignSelf:"flex-start",position:"absolute",top:0 },
+    backButton:{ alignSelf:"flex-start",position:"absolute",top:0,paddingVertical:10,paddingHorizontal:3 },
     notTheme:theme==="LIGHT"?"Dark":"Light",
     contrast:COLORS.background.contrast,
     link:{ color:COLORS.blue, borderBottomWidth:1, borderBottomColor:COLORS.blue },
@@ -110,7 +110,7 @@ export const styledtheme = (theme) => {
         link:{ marginTop:5 },
         text:{ marginTop:30 }
       },
-      text:{ marginTop:10,placeHolderColor:COLORS.text.placeHolder, height: 40, width:"85%", marginRight:4, backgroundColor:COLORS.white, shadowColor:COLORS.details.primary, shadowOffset:{ width:2,height:2 } ,shadowOpacity:0.5, shadowRadius:4, elevation:20, padding: 10 }
+      text:{ marginTop:10,placeHolderColor:COLORS.text.placeHolder, height: 40, width:"85%", marginRight:4, backgroundColor:COLORS.background.primary, color:COLORS.text.primary, padding: 10, borderWidth:0,borderBottomWidth:1,borderColor:COLORS.highlight  }
     },
     home:{
       title:{ fontSize:35,fontWeight:"800",marginBottom:15 }
@@ -133,15 +133,21 @@ export const styledtheme = (theme) => {
     bookDetails:{
       container:{ justifyContent:"flex-start",alignItems:"center", padding:25  },
       image:{ width:280, height:420,borderRadius:7 } ,
-      title:{ alignSelf:"flex-start", fontSize:25,fontWeight:"500", marginTop:20 } ,
+      title:{ alignSelf:"flex-start", fontSize:25,fontWeight:"500", marginVertical:40 } ,
       author: { alignSelf:"flex-start", fontSize:20,fontWeight:"400", marginBottom:25,marginTop:15,color:COLORS.text.secondary },
       stock: { alignSelf:"flex-end", fontSize:14  },
       description:{ alignSelf:"flex-start", fontSize:15 },
       price:{ alignSelf:"flex-end",fontSize:40,marginTop:15 },
       addButton:{ alignSelf:"flex-end",height:60,width:150 },
-      likeButton:{ borderWidth:0.5,borderRadius:5,borderColor:"#fff",padding:10 },
+      likeButton:{ borderWidth:0.5,borderRadius:5,borderColor:COLORS.details.primary,padding:10 },
       buttonContainer:{ width:"100%", flexDirection:"row",alignItems:"center", justifyContent:"space-between" }
     },
-    displayIf : (condition) => {return { visibility:condition?"":"hidden" };}
+    review:{
+      container:{ backgroundColor:COLORS.background.secondary,width:"100%",minHeight:100,marginVertical:10,borderRadius:8,padding:10 },
+      username:{ fontSize:18,fontWeight:"500" },
+      text:{ marginTop:10,marginBottom:20 },
+      rating:{ position:"absolute",bottom:20,right:20 }
+    },
+    displayIf : (condition) => {return { display:condition?"":"none" };}
   };
 };

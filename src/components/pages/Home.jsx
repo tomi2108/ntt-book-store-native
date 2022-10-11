@@ -24,7 +24,7 @@ const Home = () => {
         {isLoading? <ActivityIndicator/>:
           <>
             <Text style={styles.home.title}>Recently added</Text>
-            <FeaturedBooks books={[...books].reverse().slice(0,5)}/>
+            <FeaturedBooks books={[...books].slice(0,5)}/>
           </>
         }
       </ScrollView>

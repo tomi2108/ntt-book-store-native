@@ -16,8 +16,10 @@
     "expo-status-bar": "~1.4.0",
     "react": "18.0.0",
     "react-native": "0.69.6",
-    "react-native-date-picker": "^4.2.5",
-    "react-native-svg": "^12.3.0",
+    "react-native-date-picker": "4.2.5",
+    "react-native-star-rating": "^1.1.0",
+    "react-native-svg": "12.3.0",
+    "react-native-vector-icons": "^9.2.0",
     "react-router-native": "6.4.1"
   },
   "devDependencies": {
@@ -26,7 +28,7 @@
     "eslint": "8.24.0",
     "eslint-plugin-react": "7.31.8",
     "eslint-plugin-react-native": "4.0.0",
-    "react-native-svg-transformer": "^1.0.0"
+    "react-native-svg-transformer": "1.0.0"
   },
   "private": true
 }

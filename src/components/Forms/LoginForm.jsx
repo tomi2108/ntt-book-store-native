@@ -45,7 +45,7 @@ const LoginForm = ({ setRegistered }) => {
 
   return (
     <View  style={styles.form.container}>
-      <BackButton onPress={() => redirect("/more")} />
+      <BackButton onPress={() => redirect("/settings")} />
       {isLoading? <ActivityIndicator/> :
         <>
           <Notification show={notification}/>

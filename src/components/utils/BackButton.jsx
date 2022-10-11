@@ -1,8 +1,8 @@
+import BackArrow from "components/Icons/BackArrow.svg";
 import AppContext from "context/AppContext";
 import Constants from "expo-constants";
 import { useContext } from "react";
-import { Platform, Pressable, View } from "react-native";
-
+import { Platform, Pressable } from "react-native";
 
 const BackButton = ({ onPress,style }) => {
   const { styles } = useContext(AppContext);
@@ -16,7 +16,7 @@ const BackButton = ({ onPress,style }) => {
 
   return (
     <Pressable style={[backButtonStyle,style]} onPress={onPress}>
-      <View style={{ height:40,width:40,backgroundColor:"blue" }}></View>
+      <BackArrow height={30} width={30} fill={styles.highlight} />
     </Pressable>
   );
 };

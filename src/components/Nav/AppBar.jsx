@@ -1,3 +1,4 @@
+import Cog from "components/Icons/Cog.svg";
 import Heart from "components/Icons/Heart.svg";
 import MagnifyingGlass from "components/Icons/MagnifyingGlass.svg";
 import ShoppingBags from "components/Icons/ShoppingBags.svg";
@@ -23,7 +24,7 @@ const AppBar = () => {
       <NavIcon text="Home" navigate="/home" Icon={<ShoppingBags height={30} width={30} fill={page==="Home"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
       <NavIcon text="Liked" navigate="/liked" Icon={<Heart height={30} width={30} fill={page==="Liked"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
       <NavIcon text="Browse" navigate="/browse" Icon={<MagnifyingGlass height={30} width={30} fill={page==="Browse"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
-      <NavIcon text="More" navigate="/more" Icon={<Heart height={30} width={30} fill={page==="More"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
+      <NavIcon text="Settings" navigate="/settings" Icon={<Cog height={30} width={30} fill={page==="Settings"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
     </View>
   );
 };

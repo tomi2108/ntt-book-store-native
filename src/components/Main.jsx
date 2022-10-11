@@ -25,7 +25,7 @@ const Main = () => {
           <Route path="/home" element={<Home/>} />
           <Route path="/liked" element={<Liked/>} />
           <Route path="/browse" element={<Browse/>} />
-          <Route path="/more" element={<Settings/>} />
+          <Route path="/settings" element={<Settings/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/book/:id" element={<BookDetails id={id}/>} />
           <Route path="/*" element={<Navigate to="/home"/> } replace />

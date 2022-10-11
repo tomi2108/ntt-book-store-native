@@ -13,7 +13,7 @@ const TextInput = ({ field,fields, secure, textChange }) => {
   }).trim();
 
   return (
-    <NativeTextInput placeholderTextColor={styles.form.text.placeHolderColor} placeholder={placeholder} style={styles.form.text} value={value} onChangeText={(text) => textChange(text,field)} secureTextEntry={secure} />
+    <NativeTextInput  placeholderTextColor={styles.form.text.placeHolderColor} placeholder={placeholder} style={styles.form.text} value={value} onChangeText={(text) => textChange(text,field)} secureTextEntry={secure} />
   );
 };
 
