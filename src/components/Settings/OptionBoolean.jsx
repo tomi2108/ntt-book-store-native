@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { Switch, View } from "react-native";
 
 
-const OptionBoolean = ({ value,onValueChange,title,IconOn,IconOff }) => {
+const OptionBoolean = ({ value,onValueChange,title,IconOn,IconOff,disabled }) => {
   const { styles } = useContext(AppContext);
   return (
     <View style={styles.settings.options} onPress={onValueChange}>
@@ -15,7 +15,7 @@ const OptionBoolean = ({ value,onValueChange,title,IconOn,IconOff }) => {
         <Text style={styles.settings.optionTitle} >{title}</Text>
       </View>
       <View style={styles.settings.optionButton}>
-        <Switch onValueChange={onValueChange} value={value}/>
+        <Switch disabled={disabled} onValueChange={onValueChange} value={value}/>
       </View>
     </View>
   );

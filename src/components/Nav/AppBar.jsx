@@ -8,18 +8,18 @@ import NavIcon from "components/Nav/NavIcon";
 import AppContext from "context/AppContext";
 
 import { useContext } from "react";
-import { View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 
 
 const AppBar = () => {
-  const { styles, page } = useContext(AppContext);
+  const { styles, page, books } = useContext(AppContext);
 
   const DEFAULT_COLOR = styles.footer.text.color;
   const HIGHLIGHT_COLOR = styles.highlight;
 
 
 
-  return (
+  return (!books? <ActivityIndicator/>:
     <View style={styles.footer.container}>
       <NavIcon text="Home" navigate="/home" Icon={<ShoppingBags height={30} width={30} fill={page==="Home"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
       <NavIcon text="Liked" navigate="/liked" Icon={<Heart height={30} width={30} fill={page==="Liked"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />

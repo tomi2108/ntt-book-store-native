@@ -7,6 +7,7 @@ const NEUTRAL_COLORS = {
   blue:"#3683ff",
   red:"#fe6a6a",
   green:"#63de3e",
+  yellow:"#faaf00",
   highlight:"#3b9cf7"
 };
 
@@ -63,6 +64,7 @@ const LIGHT_COLORS = {
 export const styledtheme = (theme) => {
   const COLORS = theme === "LIGHT" ? LIGHT_COLORS : DARK_COLORS;
   return {
+    COLORS,
     highlight:COLORS.highlight,
     icon:{ color:COLORS.text.primary },
     outOfStockText:{ color:COLORS.red ,fontWeight:"500" },
@@ -143,10 +145,11 @@ export const styledtheme = (theme) => {
       buttonContainer:{ width:"100%", flexDirection:"row",alignItems:"center", justifyContent:"space-between" }
     },
     review:{
-      container:{ backgroundColor:COLORS.background.secondary,width:"100%",minHeight:100,marginVertical:10,borderRadius:8,padding:10 },
+      container:{ backgroundColor:COLORS.background.primary,width:"100%",minHeight:130,marginVertical:10,padding:10,borderTopWidth:1,borderBottomWidth:0,borderTopColor:COLORS.details.primary,borderBottomColor:COLORS.details.primary },
       username:{ fontSize:18,fontWeight:"500" },
-      text:{ marginTop:10,marginBottom:20 },
-      rating:{ position:"absolute",bottom:20,right:20 }
+      text:{ marginTop:10,marginBottom:20,fontSize:16 },
+      rating:{ position:"absolute",bottom:10,right:10 },
+      options:{ position:"absolute",top:10,right:10 }
     },
     displayIf : (condition) => {return { display:condition?"":"none" };}
   };
