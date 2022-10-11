@@ -68,9 +68,10 @@ const Review = ({ review,setReviews }) => {
 
   return (
     <View style={styles.review.container}>
-      <Text style={styles.review.username}>
-        {review.User.username} - {formatedDateWithHour}
-      </Text>
+      <View style={styles.review.title} >
+        <Text style={styles.review.username}>{review.User.username}</Text>
+        <Text style={styles.review.date}>{` - ${formatedDateWithHour}`}</Text>
+      </View>
       <Text style={styles.review.text}>
         {review.text}
       </Text>

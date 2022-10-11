@@ -5,7 +5,7 @@ export const useIsFavorite = (id,favorites) => {
 
   useEffect(() => {
     setIsFavorite(favorites.includes(id));
-  },[favorites]);
+  },[favorites,id]);
 
   return isFavorite;
 };
