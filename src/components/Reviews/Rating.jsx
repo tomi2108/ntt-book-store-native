@@ -11,6 +11,7 @@ const Rating = ({ rating, disabled, size, style, onValueChange=null }) => {
   const [display,setDisplay] = useState(null);
 
   const FullStar =(i) => <TouchableOpacity key={i} disabled={disabled}  onPress={() => handlePress(i,true)}><FontAwesome  disabled  name="star" color={styles.COLORS.yellow } size={size} style={{ marginHorizontal:2 }}/></TouchableOpacity >;
+
   const EmptyStar =(i) => <TouchableOpacity key={i} disabled={disabled}  onPress={() => handlePress(i,true)}><FontAwesome   disabled name="star" color={styles.COLORS.details.primary} size={size} style={{ marginHorizontal:2 }}/></TouchableOpacity >;
 
   const handlePress = (index) => {

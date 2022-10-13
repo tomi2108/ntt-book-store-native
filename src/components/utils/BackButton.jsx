@@ -16,7 +16,7 @@ const BackButton = ({ onPress,style }) => {
 
   return (
     <Pressable style={[backButtonStyle,style]} onPress={onPress}>
-      <BackArrow height={30} width={30} fill={styles.highlight} />
+      <BackArrow height={30} width={30} fill={styles.COLORS.highlight} />
     </Pressable>
   );
 };

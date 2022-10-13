@@ -12,8 +12,8 @@ const NavIcon = ({ text, navigate, Icon }) => {
 
   const parsedText = text[0].toLowerCase() + text.substring(1);
 
-  const DEFAULT_COLOR = styles.footer.text.color;
-  const HIGHLIGHT_COLOR = styles.highlight;
+  const DEFAULT_COLOR = styles.COLORS.details.primary;
+  const HIGHLIGHT_COLOR = styles.COLORS.highlight;
 
 
   const handlePress = () => {

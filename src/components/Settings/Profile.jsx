@@ -16,7 +16,7 @@ const Profile = () => {
   return (
     <View style={styles.settings.profile}>
       <View style={styles.settings.profilePicture}>
-        <ProfilePicture height={70} width={70} fill={styles.highlight} />
+        <ProfilePicture height={70} width={70} fill={styles.COLORS.highlight} />
       </View>
       <View>
         {user &&

@@ -16,8 +16,9 @@ const BookReviewModal = ({ modal,hideModal,bookId,setReviews }) => {
   });
 
   const handlePress = () => {
-    addReview(fields.review.value,user.id,fields.rating.value,bookId).then((newReview) =>
-      setReviews(reviews => [...reviews,{ ...newReview,  User: { username: user.username } }])
+    addReview(fields.review.value,user.id,fields.rating.value,bookId).then((newReview) => {
+      setReviews(reviews => [...reviews,{ ...newReview,  User: { username: user.username } }]);
+    }
     );
     reset();
     hideModal();
@@ -27,16 +28,16 @@ const BookReviewModal = ({ modal,hideModal,bookId,setReviews }) => {
 
   return (
     <Modal animationType="slide" visible={modal} onRequestClose={hideModal} >
-      <View style={{ height:"100%",justifyContent:"center", alignItems:"center",backgroundColor:styles.COLORS.background.primary }}>
+      <View style={styles.review.modal.container}>
         <TextInput field="review" fields={fields} textChange={textChange}/>
-        <Rating style={{ marginVertical:25 }} onValueChange={(value) => textChange(value,"rating")} rating={fields.rating.value} size={32} />
+        <Rating style={styles.review.modal.rating} onValueChange={(value) => textChange(value,"rating")} rating={fields.rating.value} size={32} />
 
-        <View style={{ flexDirection:"row", width:"100%",justifyContent:"space-around",alignItems:"center" }}>
-          <Link title="Cancel" style={{ fontSize:20 }} error onPress={() => {
+        <View style={styles.review.modal.buttonGroup}>
+          <Link title="Cancel" style={styles.review.modal.button} error onPress={() => {
             reset();
             hideModal();
           }}/>
-          <Link title="Publish" style={{ fontSize:20 }} onPress={handlePress}/>
+          <Link title="Publish" style={styles.review.modal.button} onPress={handlePress}/>
         </View>
       </View>
     </Modal>

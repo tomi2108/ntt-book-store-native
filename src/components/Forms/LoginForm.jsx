@@ -1,3 +1,4 @@
+import FormFooter from "components/Forms/FormFooter";
 import TextInput from "components/forms/TextInput";
 import BackButton from "components/utils/BackButton";
 import Link from "components/utils/Link";
@@ -8,7 +9,6 @@ import { useNotification } from "hooks/utils/useNotification";
 
 import { useContext, useState } from "react";
 import { ActivityIndicator, View } from "react-native";
-import FormFooter from "./FormFooter";
 
 
 const LoginForm = ({ setRegistered }) => {

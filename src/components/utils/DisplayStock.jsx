@@ -1,6 +1,6 @@
+import Text from "components/utils/Text";
 import AppContext from "context/AppContext";
 import { useContext } from "react";
-import Text from "./Text";
 
 const DisplayStock = ({ book,style }) => {
   const { styles }= useContext(AppContext);

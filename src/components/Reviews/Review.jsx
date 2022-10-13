@@ -2,15 +2,16 @@ import Cross from "components/Icons/Cross.svg";
 import ThreeDots from "components/Icons/ThreeDots.svg";
 import Tick from "components/Icons/Tick.svg";
 import Trashcan from "components/Icons/Trashcan.svg";
+import Rating from "components/Reviews/Rating";
 import OptionPressable from "components/Settings/OptionPressable";
 import NotificationModal from "components/utils/NotificationModal";
 import Text from "components/utils/Text";
 import AppContext from "context/AppContext";
 import { useModal } from "hooks/utils/useModal";
+import { deleteReview } from "services/books";
+
 import { useContext, useState } from "react";
 import { ActivityIndicator, TouchableOpacity, View } from "react-native";
-import { deleteReview } from "services/books";
-import Rating from "./Rating";
 
 const Review = ({ review,setReviews }) => {
 
@@ -59,6 +60,7 @@ const Review = ({ review,setReviews }) => {
           errorModal.showModal();
           setTimeout(() => {
             errorModal.hideModal();
+            setReviews(reviews => reviews.filter(r => r.id!==review.id));
           },2000);
         },500);
 

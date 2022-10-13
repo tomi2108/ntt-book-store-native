@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { Keyboard, Modal, TouchableWithoutFeedback, View } from "react-native";
 
 const Login = () => {
-  const { user,redirect } = useContext(AppContext);
+  const { user, styles, redirect } = useContext(AppContext);
   const { modal, hideModal, showModal } = useModal();
   const [registered, setRegistered] = useState(true);
 
@@ -27,7 +27,7 @@ const Login = () => {
   return (
     <Modal animationType="slide" presentationStyle="fullScreen" visible={modal} onRequestClose={returnToSettings} >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-        <View style={{ justifyContent:"center",alignItems:"center" }}>
+        <View style={styles.login.container}>
           {
             registered? <LoginForm setRegistered={setRegistered}/> : <RegisterForm setRegistered={setRegistered}/>
           }

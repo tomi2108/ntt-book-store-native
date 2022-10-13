@@ -14,8 +14,8 @@ import { ActivityIndicator, View } from "react-native";
 const AppBar = () => {
   const { styles, page, books } = useContext(AppContext);
 
-  const DEFAULT_COLOR = styles.footer.text.color;
-  const HIGHLIGHT_COLOR = styles.highlight;
+  const DEFAULT_COLOR = styles.COLORS.details.primary;
+  const HIGHLIGHT_COLOR = styles.COLORS.highlight;
 
   return (
     <View style={styles.footer.container}>

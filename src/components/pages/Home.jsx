@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <>
       <Header title="Ntt bookstore" displayUser displayCart/>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ padding:25  }}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.home.container}>
         {isLoading? <ActivityIndicator/>:
           <>
             <Text style={styles.home.title}>Recently added</Text>

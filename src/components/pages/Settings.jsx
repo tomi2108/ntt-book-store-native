@@ -26,9 +26,9 @@ const Settings = () => {
       <Profile/>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.settings.list}>
         <OptionBoolean value={theme==="DARK"} onValueChange={toggleTheme} title={`${styles.notTheme} mode`}
-          IconOn={<Sun height={26} width={26} fill={styles.icon.color} />}
-          IconOff ={<Moon height={26} width={26} fill={styles.icon.color} />} />
-        { user && <Option onPress={handleLogOut} title="Log out" Icon={<PowerSwitch height={26} width={26} fill={styles.icon.color} />} />}
+          IconOn={<Sun height={26} width={26} fill={styles.COLORS.details.primary} />}
+          IconOff ={<Moon height={26} width={26} fill={styles.COLORS.details.primary} />} />
+        { user && <Option onPress={handleLogOut} title="Log out" Icon={<PowerSwitch height={26} width={26} fill={styles.COLORS.details.primary} />} />}
       </ScrollView>
     </>
   );

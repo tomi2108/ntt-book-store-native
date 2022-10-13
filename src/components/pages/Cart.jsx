@@ -14,12 +14,12 @@ const Cart = ({ hideModal }) => {
     <>
       <Header title={`${user.username}'s cart`}/>
       <BackButton onPress={() => hideModal()} />
-      <ScrollView style={{ backgroundColor:styles.COLORS.background.primary }} showsVerticalScrollIndicator={false} contentContainerStyle={{ backgroundColor:styles.COLORS.background.primary }}>
+      <ScrollView style={styles.cart.container} showsVerticalScrollIndicator={false} contentContainerStyle={styles.cart.container}>
         {
           cart.length > 0 ?
             cart.map((item) => <BookDisplay item={item} key={item.book.id} quantity={item.quantity} cart/>):
             <View>
-              <Text style={{ fontSize:30,alignSelf:"center",paddingTop:20 }}>Your cart is empty</Text>
+              <Text style={styles.cart.empty}>Your cart is empty</Text>
             </View>
         }
       </ScrollView>

@@ -15,7 +15,7 @@ const NotificationModal = ({ mode, modal,hideModal,children }) => {
       <TouchableWithoutFeedback accessible={false} onPress={hideModal}>
         <View style={{ height:"100%",width:"100%" }}/>
       </TouchableWithoutFeedback>
-      <View style={{ position:"absolute",bottom:0,width:"100%", height:100, backgroundColor:color, justifyContent:"center",alignItems:"center" }}>
+      <View style={[styles.notificationModal,{ backgroundColor:color }]}>
         {children}
       </View>
     </Modal>

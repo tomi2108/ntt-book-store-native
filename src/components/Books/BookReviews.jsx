@@ -1,3 +1,4 @@
+import BookReviewModal from "components/Books/BookReviewModal";
 import Review from "components/Reviews/Review";
 import Button from "components/utils/Button";
 import Text from "components/utils/Text";
@@ -5,10 +6,9 @@ import AppContext from "context/AppContext";
 import { useModal } from "hooks/utils/useModal";
 import { useContext, useEffect, useState } from "react";
 import { View } from "react-native";
-import BookReviewModal from "./BookReviewModal";
 
 const BookReviews = ({ bookReviews,bookId }) => {
-  const { user } = useContext(AppContext);
+  const { user,styles } = useContext(AppContext);
 
   const { modal,showModal,hideModal } = useModal();
 
@@ -35,7 +35,7 @@ const BookReviews = ({ bookReviews,bookId }) => {
 
   return (
     <>
-      <View style={{ marginVertical:15 }}>
+      <View style={styles.review.button}>
         {!user? null:
           reviewed? <Text>You have already reviewed this book</Text> :
             <Button title="Add review" onPress={showModal}/>

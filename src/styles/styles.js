@@ -65,8 +65,6 @@ export const styledtheme = (theme) => {
   const COLORS = theme === "LIGHT" ? LIGHT_COLORS : DARK_COLORS;
   return {
     COLORS,
-    highlight:COLORS.highlight,
-    icon:{ color:COLORS.text.primary },
     outOfStockText:{ color:COLORS.red ,fontWeight:"500" },
     priceText:{ color:COLORS.blue,fontWeight:"800" },
     backButton:{ alignSelf:"flex-start",position:"absolute",top:0,paddingVertical:10,paddingHorizontal:3 },
@@ -74,6 +72,7 @@ export const styledtheme = (theme) => {
     contrast:COLORS.background.contrast,
     link:{ color:COLORS.blue, borderBottomWidth:1, borderBottomColor:COLORS.blue },
     notification:{ color:COLORS.red,fontSize:14,fontWeight:"bold" },
+    notificationModal:{ position:"absolute",bottom:0,width:"100%", height:100, justifyContent:"center",alignItems:"center" },
     reset:{ fontFamily:"" },
     textComponent:{ color:COLORS.text.primary },
     header:{
@@ -106,7 +105,7 @@ export const styledtheme = (theme) => {
       username:{ fontSize:30,fontWeight:"500" }
     },
     form:{
-      button:{ fontSize:20, marginTop:12 },
+      button:{ fontSize:20, marginTop:20  },
       container: { height:"100%", width:"100%", backgroundColor:COLORS.background.primary,justifyContent:"center",alignItems:"center" },
       datePicker:{ marginVertical:30,alignItems:"center",justifyContent:"space-evenly",flexDirection:"row", width:"100%" },
       footer:{
@@ -116,7 +115,11 @@ export const styledtheme = (theme) => {
       text:{ marginTop:10,placeHolderColor:COLORS.text.placeHolder, height: 40, width:"85%", marginRight:4, backgroundColor:COLORS.background.primary, color:COLORS.text.primary, padding: 10, borderWidth:0,borderBottomWidth:1,borderColor:COLORS.highlight  }
     },
     home:{
-      title:{ fontSize:35,fontWeight:"800",marginBottom:15 }
+      title:{ fontSize:35,fontWeight:"800",marginBottom:15 },
+      container:{ padding:20 }
+    },
+    login:{
+      container:{ justifyContent:"center",alignItems:"center" }
     },
     bookCard:{
       button:{ alignSelf:"flex-end",position:"absolute",right:10,bottom:10 },
@@ -152,7 +155,14 @@ export const styledtheme = (theme) => {
       date:{ fontSize:18 },
       text:{ marginTop:10,marginBottom:20,fontSize:16 },
       rating:{ position:"absolute",bottom:10,right:10 },
-      options:{ position:"absolute",top:10,right:10 }
+      options:{ position:"absolute",top:10,right:10 },
+      button:{ marginVertical:15 },
+      modal:{
+        container:{ height:"100%",justifyContent:"center", alignItems:"center",backgroundColor:COLORS.background.primary },
+        rating:{ marginVertical:25 },
+        buttonGroup:{ flexDirection:"row", width:"100%",justifyContent:"space-around",alignItems:"center" },
+        button:{ fontSize:20 }
+      }
     },
     bookDisplay:{
       container:{ borderBottomWidth:1,borderBottomColor:COLORS.details.primary,flexDirection:"row", width:"100%" ,height:200,backgroundColor:COLORS.background.primary,padding:20 },
@@ -162,6 +172,14 @@ export const styledtheme = (theme) => {
       stock:{ position:"absolute",right:20,bottom:40  },
       price:{ position:"absolute",bottom:0,right:20, fontSize:30 },
       title:{ fontSize:20 , fontWeight:"600" }
+    },
+    checkOut:{
+      container:{ height:90,width:"100%",backgroundColor:COLORS.background.secondary,alignItems:"center",justifyContent:"center" },
+      link:{ fontSize:20 }
+    },
+    cart:{
+      container:{ backgroundColor:COLORS.background.primary },
+      empty:{ fontSize:30,alignSelf:"center",paddingTop:20 }
     },
     displayIf : (condition) => {return { display:condition?"":"none" };}
   };

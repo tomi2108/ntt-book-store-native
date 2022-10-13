@@ -13,7 +13,7 @@ const ShoppingCart = () => {
   return (
     <>
       <TouchableOpacity onPress={showModal} >
-        <ShoppingCartIcon width={30} height={30} stroke={styles.icon.color}/>
+        <ShoppingCartIcon width={30} height={30} stroke={styles.COLORS.details.primary}/>
       </TouchableOpacity>
       <Modal  animationType="slide" presentationStyle="fullScreen" visible={modal} onRequestClose={hideModal}>
         <Cart hideModal={hideModal}/>

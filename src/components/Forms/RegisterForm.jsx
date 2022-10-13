@@ -67,7 +67,7 @@ const RegisterForm = ({ setRegistered }) => {
           <TextInput field="username" fields={fields} textChange={textChange}  />
           <TextInput field="password" fields={fields} textChange={textChange} secure  />
           <TextInput field="confirmPassword" fields={fields} textChange={textChange}  secure />
-          <Link style={{ fontSize:20, marginTop:20 }} title="Register" onPress={handleRegister}  />
+          <Link style={styles.form.button} title="Register" onPress={handleRegister}  />
           <FormFooter title="Log in" text="Already have an account?" onPress={() => setRegistered(true)}/>
         </>
       }

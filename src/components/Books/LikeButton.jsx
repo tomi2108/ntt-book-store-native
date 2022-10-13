@@ -20,7 +20,7 @@ const LikeButton = ({ style,bookId }) => {
 
   return (
     <TouchableOpacity style={style} onPress={like}>
-      <Heart height={40} width={40} fill={isFavorite?"red":styles.footer.text.color}/>
+      <Heart height={40} width={40} fill={isFavorite?styles.COLORS.red:styles.COLORS.details.primary}/>
     </TouchableOpacity>
   );
 };
