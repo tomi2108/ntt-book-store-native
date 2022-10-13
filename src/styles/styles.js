@@ -81,7 +81,8 @@ export const styledtheme = (theme) => {
       input: { fontSize:12, height: 30, width:"85%", marginRight:4, backgroundColor:COLORS.white, borderRadius:50, shadowColor:COLORS.details.primary, shadowOffset:{ width:2,height:2 }, shadowOpacity:0.5, shadowRadius:4, elevation:20 , paddingHorizontal:10 },
       searchBar:{ justifyContent:"center", alignItems:"center", placeHolderColor:COLORS.text.placeHolder, flexDirection:"row", height:30 },
       title:{  fontSize:22, fontWeight:"500" },
-      userContainer:{ marginTop:20 }
+      userContainer:{ marginTop:20 },
+      cart:{ position:"absolute", right:10 }
     },
     main:{
       container:{ backgroundColor:COLORS.background.primary,flex:1 }
@@ -152,6 +153,15 @@ export const styledtheme = (theme) => {
       text:{ marginTop:10,marginBottom:20,fontSize:16 },
       rating:{ position:"absolute",bottom:10,right:10 },
       options:{ position:"absolute",top:10,right:10 }
+    },
+    bookDisplay:{
+      container:{ borderBottomWidth:1,borderBottomColor:COLORS.details.primary,flexDirection:"row", width:"100%" ,height:200,backgroundColor:COLORS.background.primary,padding:20 },
+      author:{ fontSize:16,fontWeight:"400",color:COLORS.text.secondary,marginTop:5 },
+      details:{ width:"70%", marginLeft:20,height:160 },
+      image:{ width:100,height:160,borderRadius:7 },
+      stock:{ position:"absolute",right:20,bottom:40  },
+      price:{ position:"absolute",bottom:0,right:20, fontSize:30 },
+      title:{ fontSize:20 , fontWeight:"600" }
     },
     displayIf : (condition) => {return { display:condition?"":"none" };}
   };

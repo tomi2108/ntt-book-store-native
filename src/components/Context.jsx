@@ -22,7 +22,7 @@ const Context = () => {
   const [user, userActions] = useUser(userStorage);
   const [cart, cartActions] = useCart(user);
   const [favorites,favoritesActions] = useFavorites(user);
-  const [page,setPage] = useState("Home");
+  const [page,setPage] = useState("home");
 
   const { theme, styles, toggleTheme } = useTheme(themeStorage);
 

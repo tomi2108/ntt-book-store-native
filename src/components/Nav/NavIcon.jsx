@@ -9,6 +9,9 @@ import { Pressable, View } from "react-native";
 const NavIcon = ({ text, navigate, Icon }) => {
   const { styles, redirect, page } = useContext(AppContext);
 
+
+  const parsedText = text[0].toLowerCase() + text.substring(1);
+
   const DEFAULT_COLOR = styles.footer.text.color;
   const HIGHLIGHT_COLOR = styles.highlight;
 
@@ -21,7 +24,7 @@ const NavIcon = ({ text, navigate, Icon }) => {
     <Pressable onPress={handlePress}>
       <View style={styles.footer.iconWrapper}>
         {Icon}
-        <Text style={{ ...styles.footer.text, color:page===text?HIGHLIGHT_COLOR:DEFAULT_COLOR }}>{text}</Text>
+        <Text style={{ ...styles.footer.text, color:page===parsedText?HIGHLIGHT_COLOR:DEFAULT_COLOR }}>{text}</Text>
       </View>
     </Pressable>
   );

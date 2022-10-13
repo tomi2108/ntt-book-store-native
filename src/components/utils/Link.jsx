@@ -1,15 +1,15 @@
 import AppContext from "context/AppContext";
 import { useContext } from "react";
-import { Pressable, Text } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 
-const Link = ({ onPress,title,style }) => {
+const Link = ({ onPress,title,style,error=false }) => {
   const { styles }=useContext(AppContext);
 
 
   return (
-    <Pressable onPress={onPress}>
-      <Text style={[styles.link,style]}>{title}</Text>
-    </Pressable>
+    <TouchableOpacity onPress={onPress}>
+      <Text style={[styles.link,error&&{ color:styles.COLORS.red,borderBottomColor:styles.COLORS.red },style]}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 

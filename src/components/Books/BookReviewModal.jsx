@@ -1,9 +1,10 @@
 import TextInput from "components/Forms/TextInput";
 import Rating from "components/Reviews/Rating";
+import Link from "components/utils/Link";
 import AppContext from "context/AppContext";
 import { useFields } from "hooks/utils/useFields";
 import { useContext } from "react";
-import { Button, Modal, View } from "react-native";
+import { Modal, View } from "react-native";
 import { addReview } from "services/books";
 
 const BookReviewModal = ({ modal,hideModal,bookId,setReviews }) => {
@@ -31,11 +32,11 @@ const BookReviewModal = ({ modal,hideModal,bookId,setReviews }) => {
         <Rating style={{ marginVertical:25 }} onValueChange={(value) => textChange(value,"rating")} rating={fields.rating.value} size={32} />
 
         <View style={{ flexDirection:"row", width:"100%",justifyContent:"space-around",alignItems:"center" }}>
-          <Button title="Cancel" color={styles.COLORS.red} onPress={() => {
+          <Link title="Cancel" style={{ fontSize:20 }} error onPress={() => {
             reset();
             hideModal();
           }}/>
-          <Button title="Publish" onPress={handlePress}/>
+          <Link title="Publish" style={{ fontSize:20 }} onPress={handlePress}/>
         </View>
       </View>
     </Modal>

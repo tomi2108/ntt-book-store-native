@@ -1,15 +1,14 @@
 import Review from "components/Reviews/Review";
+import Button from "components/utils/Button";
 import Text from "components/utils/Text";
 import AppContext from "context/AppContext";
 import { useModal } from "hooks/utils/useModal";
 import { useContext, useEffect, useState } from "react";
-import { Button, View } from "react-native";
+import { View } from "react-native";
 import BookReviewModal from "./BookReviewModal";
 
 const BookReviews = ({ bookReviews,bookId }) => {
   const { user } = useContext(AppContext);
-
-  console.log(bookReviews);
 
   const { modal,showModal,hideModal } = useModal();
 

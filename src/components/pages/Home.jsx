@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <Header title="Ntt bookstore" displayUser/>
+      <Header title="Ntt bookstore" displayUser displayCart/>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ padding:25  }}>
         {isLoading? <ActivityIndicator/>:
           <>

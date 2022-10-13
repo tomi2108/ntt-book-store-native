@@ -22,10 +22,10 @@ const AppBar = () => {
       {
         !books? <ActivityIndicator/>:
           <>
-            <NavIcon text="Home" navigate="/home" Icon={<ShoppingBags height={30} width={30} fill={page==="Home"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
-            <NavIcon text="Liked" navigate="/liked" Icon={<Heart height={30} width={30} fill={page==="Liked"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
-            <NavIcon text="Browse" navigate="/browse" Icon={<MagnifyingGlass height={30} width={30} fill={page==="Browse"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
-            <NavIcon text="Settings" navigate="/settings" Icon={<Cog height={30} width={30} fill={page==="Settings"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
+            <NavIcon text="Home" navigate="/home" Icon={<ShoppingBags height={30} width={30} fill={page==="home"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
+            <NavIcon text="Liked" navigate="/liked" Icon={<Heart height={30} width={30} fill={page==="liked"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
+            <NavIcon text="Browse" navigate="/browse" Icon={<MagnifyingGlass height={30} width={30} fill={page==="browse"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
+            <NavIcon text="Settings" navigate="/settings" Icon={<Cog height={30} width={30} fill={page==="settings"?HIGHLIGHT_COLOR:DEFAULT_COLOR} />} />
           </>
       }
     </View>

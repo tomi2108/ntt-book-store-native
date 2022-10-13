@@ -10,7 +10,7 @@ export const createUser = async (user) => {
     const res = await axios.post(`${url}`, user);
     return res.data;
   } catch (err) {
-    throw new Error(err.response.data.message);
+    throw new Error(err);
   }
 };
 
@@ -28,7 +28,7 @@ export const updateCart = async (user, newCart) => {
     const res = await axios.put(`${url}/${user.username}/cart`, { newCart });
     return res.data;
   } catch (err) {
-    throw new Error(err.response.data.message);
+    throw new Error(err);
   }
 };
 
@@ -37,7 +37,7 @@ export const getFavorites = async (user) => {
     const res = await axios.get(`${url}/${user.username}/favorites`);
     return res.data;
   } catch (err) {
-    throw new Error(err.response.data.message);
+    throw new Error(err);
   }
 };
 
@@ -46,7 +46,7 @@ export const addFavorite = async (username, bookId) => {
     const res = await axios.put(`${url}/${username}/favorites`, { bookId });
     return res.data;
   } catch (err) {
-    throw new Error(err.response.data.message);
+    throw new Error(err);
   }
 };
 
@@ -55,7 +55,7 @@ export const removeFavorite = async (username, bookId) => {
     const res = await axios.put(`${url}/${username}/favorites/remove`, { bookId });
     return res.data;
   } catch (err) {
-    throw new Error(err.response.data.message);
+    throw new Error(err);
   }
 };
 
