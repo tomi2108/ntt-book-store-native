@@ -6,14 +6,14 @@ import { Platform, StatusBar } from "react-native";
 
 export const useTheme = (themeStorage) => {
   const [theme,setTheme] = useState(null);
-  const [styles, setStyle] = useState(styledtheme(theme));
+  const [styles, setStyles] = useState(styledtheme(theme));
 
   const getLocalTheme = async () => {
     const localTheme = await themeStorage.getTheme();
     if(!localTheme) await themeStorage.toggleTheme();
     const preferedTheme = await themeStorage.getTheme();
     setTheme(preferedTheme);
-    setStyle(styledtheme(preferedTheme));
+    setStyles(styledtheme(preferedTheme));
     updateStatusBar(preferedTheme);
   };
 
@@ -31,7 +31,7 @@ export const useTheme = (themeStorage) => {
   useEffect(() => {
     if(theme){
       updateStatusBar(theme);
-      setStyle(styledtheme(theme));
+      setStyles(styledtheme(theme));
     }
   }, [theme]);
 
