@@ -29,7 +29,7 @@ const BookDetails = () => {
                 { user? <LikeButton style={styles.bookDetails.likeButton} bookId={book.id} width={40} height={40}/> : <View/>}
                 <TransactionButton fontSize={20} style={styles.bookDetails.addButton} transaction={cartActions.addToCart} params={[book]} disabledWhen={!user || outOfStock } pendingLabel="Add to cart" completeLabel="Added" errorLabel="Not added" />
               </View>
-              <BookRecommendations book={book} recommendations={recommendations}/>
+              {recommendations.length > 0 &&  <BookRecommendations book={book} recommendations={recommendations}/>}
               <BookReviews bookId={book.id} bookReviews={book.reviews}/>
             </ScrollView>
           </>
