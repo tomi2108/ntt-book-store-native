@@ -4,7 +4,7 @@ import { useIsFavorite } from "hooks/utils/useIsFavorite";
 import { useContext } from "react";
 import { TouchableOpacity } from "react-native";
 
-const LikeButton = ({ style,bookId }) => {
+const LikeButton = ({ style,bookId,width,height }) => {
   const { styles,favorites,favoritesActions } = useContext(AppContext);
   const isFavorite = useIsFavorite(bookId,favorites);
 
@@ -20,7 +20,7 @@ const LikeButton = ({ style,bookId }) => {
 
   return (
     <TouchableOpacity style={style} onPress={like}>
-      <Heart height={40} width={40} fill={isFavorite?styles.COLORS.red:styles.COLORS.details.primary}/>
+      <Heart height={height} width={width} fill={isFavorite?styles.COLORS.red:styles.COLORS.details.primary}/>
     </TouchableOpacity>
   );
 };

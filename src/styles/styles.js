@@ -77,7 +77,7 @@ export const styledtheme = (theme) => {
     textComponent:{ color:COLORS.text.primary },
     header:{
       container:{ height:140, backgroundColor:COLORS.background.secondary, paddingTop:Constants.statusBarHeight + 10, paddingRight:15, paddingLeft:15 },
-      input: { fontSize:12, height: 30, width:"85%", marginRight:4, backgroundColor:COLORS.white, borderRadius:50, shadowColor:COLORS.details.primary, shadowOffset:{ width:2,height:2 }, shadowOpacity:0.5, shadowRadius:4, elevation:20 , paddingHorizontal:10 },
+      input: { alignSelf:"flex-start",fontSize:12, height: 30, marginRight:4, backgroundColor:COLORS.white, borderRadius:50, shadowColor:COLORS.details.primary, shadowOffset:{ width:2,height:2 }, shadowOpacity:0.5, shadowRadius:4, elevation:20 , paddingHorizontal:10 },
       searchBar:{ justifyContent:"center", alignItems:"center", placeHolderColor:COLORS.text.placeHolder, flexDirection:"row", height:30 },
       title:{  fontSize:22, fontWeight:"500" },
       userContainer:{ marginTop:20 },
@@ -171,10 +171,11 @@ export const styledtheme = (theme) => {
       image:{ width:100,height:160,borderRadius:7 },
       stock:{ position:"absolute",right:20,bottom:40  },
       price:{ position:"absolute",bottom:0,right:20, fontSize:30 },
-      title:{ fontSize:20 , fontWeight:"600" }
+      title:{ fontSize:20 , fontWeight:"600" },
+      likeButton:{ justifyContent:"center",alignItems:"center", borderWidth:0.5,borderRadius:5,borderColor:COLORS.details.primary,padding:20,width:50,height:50,position:"absolute",bottom:5 }
     },
     checkOut:{
-      container:{ height:90,width:"100%",backgroundColor:COLORS.background.secondary,alignItems:"center",justifyContent:"center" },
+      container:{ height:90,width:"100%",backgroundColor:COLORS.background.secondary,alignItems:"center",justifyContent:"space-between",flexDirection:"row",paddingHorizontal:25 },
       link:{ fontSize:20 }
     },
     cart:{

@@ -1,5 +1,5 @@
 import FeaturedBooks from "components/Books/FeaturedBooks";
-import Header from "components/Nav/Header";
+import HeaderWithCart from "components/Nav/HeaderWithCart";
 import Text from "components/utils/Text";
 import AppContext from "context/AppContext";
 import { useContext, useEffect, useState } from "react";
@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <Header title="Ntt bookstore" displayUser displayCart/>
+      <HeaderWithCart title="Ntt bookstore" displayUser/>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.home.container}>
         {isLoading? <ActivityIndicator/>:
           <>

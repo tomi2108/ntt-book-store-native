@@ -2,7 +2,7 @@ import BookInfo from "components/Books/BookInfo";
 import BookRecommendations from "components/Books/BookRecommendations";
 import BookReviews from "components/Books/BookReviews";
 import LikeButton from "components/Books/LikeButton";
-import Header from "components/Nav/Header";
+import HeaderWithoutCart from "components/Nav/HeaderWithoutCart";
 import TransactionButton from "components/utils/TransactionButton";
 import AppContext from "context/AppContext";
 import { useBookById } from "hooks/utils/useBookById";
@@ -22,11 +22,11 @@ const BookDetails = () => {
       {
         !book? <ActivityIndicator/> :
           <>
-            <Header title={book.title} displayUser/>
+            <HeaderWithoutCart title={book.title} displayUser/>
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.bookDetails.container}>
               <BookInfo book={book}/>
               <View style={styles.bookDetails.buttonContainer}>
-                { user? <LikeButton style={styles.bookDetails.likeButton} bookId={book.id}/> : <View/>}
+                { user? <LikeButton style={styles.bookDetails.likeButton} bookId={book.id} width={40} height={40}/> : <View/>}
                 <TransactionButton fontSize={20} style={styles.bookDetails.addButton} transaction={cartActions.addToCart} params={[book]} disabledWhen={!user || outOfStock } pendingLabel="Add to cart" completeLabel="Added" errorLabel="Not added" />
               </View>
               <BookRecommendations book={book} recommendations={recommendations}/>

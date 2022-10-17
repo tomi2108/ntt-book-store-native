@@ -1,7 +1,7 @@
 import Moon from "components/Icons/Moon.svg";
 import PowerSwitch from "components/Icons/PowerSwitch.svg";
 import Sun from "components/Icons/Sun.svg";
-import Header from "components/Nav/Header";
+import HeaderWithoutCart from "components/Nav/HeaderWithoutCart";
 import OptionBoolean from "components/Settings/OptionBoolean";
 import Option from "components/Settings/OptionPressable";
 import Profile from "components/Settings/Profile";
@@ -22,7 +22,7 @@ const Settings = () => {
 
   return (
     <>
-      <Header title="Settings"/>
+      <HeaderWithoutCart title="Settings"/>
       <Profile/>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.settings.list}>
         <OptionBoolean value={theme==="DARK"} onValueChange={toggleTheme} title={`${styles.notTheme} mode`}

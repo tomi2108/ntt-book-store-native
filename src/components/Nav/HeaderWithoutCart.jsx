@@ -3,12 +3,11 @@ import Text from "components/utils/Text";
 
 import AppContext from "context/AppContext";
 
-import ShoppingCart from "components/Nav/ShoppingCart";
 import { useContext } from "react";
 import { View } from "react-native";
 
 
-const Header = ({ title,displayUser,displayCart }) => {
+const HeaderWithoutCart = ({ title,displayUser }) => {
   const { styles } = useContext(AppContext);
 
   return (
@@ -16,7 +15,6 @@ const Header = ({ title,displayUser,displayCart }) => {
       <View style={ styles.header.searchBar}>
         <Text style={styles.header.title} >{title}</Text>
         <View style={styles.header.cart}>
-          {displayCart && <ShoppingCart/>}
         </View>
       </View>
       {displayUser && <UserDisplay/>}
@@ -24,4 +22,4 @@ const Header = ({ title,displayUser,displayCart }) => {
   );
 };
 
-export default Header;
+export default HeaderWithoutCart;
