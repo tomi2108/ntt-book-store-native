@@ -18,7 +18,7 @@ const Browse = () => {
       <SearchBar value={fields.search.value} textChange={textChange} />
       <ScrollView showsVerticalScrollIndicator={false} >
         {
-          books.filter((book) => book.title.toLowerCase().includes(fields.search.value.toLowerCase())).map((b) => <BookDisplay item={b} key={b.id} /> )
+          books.filter((book) => book.title.toLowerCase().includes(fields.search.value.toLowerCase())).map((b) => <BookDisplay likeButton={false} item={b} key={b.id} /> )
         }
       </ScrollView>
     </>

@@ -1,3 +1,4 @@
+import BookDisplay from "components/Books/BookDisplay";
 import FeaturedBooks from "components/Books/FeaturedBooks";
 import HeaderWithCart from "components/Nav/HeaderWithCart";
 import Text from "components/utils/Text";
@@ -25,6 +26,10 @@ const Home = () => {
           <>
             <Text style={styles.home.title}>Recently added</Text>
             <FeaturedBooks books={[...books].reverse().slice(0,5)}/>
+            <Text style={styles.home.title}>Featured</Text>
+            {
+              books.slice(0,5).map((b) => <BookDisplay key={b.id} item={b} likeButton={false}/>)
+            }
           </>
         }
       </ScrollView>

@@ -7,7 +7,7 @@ import { Image, TouchableOpacity, View } from "react-native";
 import LikeButton from "./LikeButton";
 
 
-const BookDisplay = ({ item,quantity,cart=false }) => {
+const BookDisplay = ({ item,quantity,cart=false,likeButton=true }) => {
   const book = item.book ?? item;
 
   const { styles,redirect, user } = useContext(AppContext);
@@ -19,7 +19,7 @@ const BookDisplay = ({ item,quantity,cart=false }) => {
         <Text style={styles.bookDisplay.title}>{book.title} {!cart?null:`x${quantity}`}</Text>
         {!cart && <Text style={styles.bookDisplay.author}>{`by ${book.Author.name}`}</Text>}
         {cart && <CartControls item={item}/> }
-        { user? <LikeButton style={styles.bookDisplay.likeButton} bookId={book.id} width={30} height={30} /> : <View/>}
+        { user && likeButton? <LikeButton style={styles.bookDisplay.likeButton} bookId={book.id} width={30} height={30} /> : <View/>}
         <DisplayStock style={styles.bookDisplay.stock} book={book}/>
         <Text style={[styles.priceText,styles.bookDisplay.price]}>{`$${book.price}`}</Text>
       </View>
