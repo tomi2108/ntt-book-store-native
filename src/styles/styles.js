@@ -41,8 +41,8 @@ export const styledtheme = (theme) => {
       link:{ fontSize:20 }
     },
     home:{
-      title:{ fontSize:35,fontWeight:"800",marginBottom:15 },
-      container:{ padding:20 }
+      title:{ fontSize:35,fontWeight:"800",marginVertical:20 },
+      container:{ paddingHorizontal:20 }
     },
     login:{
       container:{ justifyContent:"center",alignItems:"center" }
