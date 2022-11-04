@@ -42,7 +42,7 @@ export const styledtheme = (theme) => {
     },
     home:{
       title:{ fontSize:35,fontWeight:"800",marginVertical:20 },
-      container:{ paddingHorizontal:20 }
+      container:{ paddingHorizontal:20,justifyContent:"center",minHeight:"100%" }
     },
     login:{
       container:{ justifyContent:"center",alignItems:"center" }

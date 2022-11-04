@@ -22,13 +22,15 @@ const Home = () => {
     <>
       <HeaderWithCart title="Ntt bookstore" displayUser/>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.home.container}>
-        {isLoading? <ActivityIndicator/>:
+        {isLoading?
+          <ActivityIndicator/>
+          :
           <>
-            <Text style={styles.home.title}>Recently added</Text>
-            <FeaturedBooks books={[...books].reverse().slice(0,5)}/>
             <Text style={styles.home.title}>Featured</Text>
+            <FeaturedBooks books={books.slice(0,5)}/>
+            <Text style={styles.home.title}>Recently added</Text>
             {
-              books.slice(0,5).map((b) => <BookDisplay key={b.id} item={b} likeButton={false}/>)
+              [...books].reverse().slice(0,5).map((b) => <BookDisplay key={b.id} item={b} likeButton={false}/>)
             }
           </>
         }

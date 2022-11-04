@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { Pressable, View } from "react-native";
 
 
-const NavIcon = ({ text, navigate, Icon }) => {
+const NavIcon = ({ text, navigate, Icon,disabled }) => {
   const { styles, redirect, page } = useContext(AppContext);
 
 
@@ -21,7 +21,7 @@ const NavIcon = ({ text, navigate, Icon }) => {
   };
 
   return (
-    <Pressable onPress={handlePress}>
+    <Pressable disabled={disabled} onPress={handlePress}>
       <View style={styles.footer.iconWrapper}>
         {Icon}
         <Text style={{ ...styles.footer.text, color:page===parsedText?HIGHLIGHT_COLOR:DEFAULT_COLOR }}>{text}</Text>
