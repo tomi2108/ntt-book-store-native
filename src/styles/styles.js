@@ -27,7 +27,6 @@ export const styledtheme = (theme) => {
     link:{ color:COLORS.blue, borderBottomWidth:1, borderBottomColor:COLORS.blue },
     notification:{ color:COLORS.red,fontSize:14,fontWeight:"bold" },
     notificationModal:{ position:"absolute",bottom:0,width:"100%", height:100, justifyContent:"center",alignItems:"center" },
-    notTheme:theme==="LIGHT"?"Dark":"Light",
     outOfStockText:{ color:COLORS.red ,fontWeight:"500" },
     priceText:{ color:COLORS.blue,fontWeight:"800" },
     reset:{ fontFamily:"" },

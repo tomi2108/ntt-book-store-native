@@ -7,12 +7,12 @@ import { Modal, TouchableOpacity } from "react-native";
 
 
 const ShoppingCart = () => {
-  const { styles } = useContext(AppContext);
+  const { styles,user } = useContext(AppContext);
   const { modal, showModal,hideModal } = useModal();
 
   return (
     <>
-      <TouchableOpacity onPress={showModal} >
+      <TouchableOpacity disabled={!user} onPress={showModal} >
         <ShoppingCartIcon width={30} height={30} stroke={styles.COLORS.details.primary}/>
       </TouchableOpacity>
       <Modal  animationType="slide" presentationStyle="fullScreen" visible={modal} onRequestClose={hideModal}>

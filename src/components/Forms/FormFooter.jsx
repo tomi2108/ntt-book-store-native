@@ -6,6 +6,7 @@ import { useContext } from "react";
 const FormFooter = ({ text,title,onPress }) => {
   const { styles } = useContext(AppContext);
 
+  
   return (
     <>
       <Text style={styles.form.footer.text}>{text}</Text>

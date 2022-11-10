@@ -27,9 +27,7 @@ const RegisterForm = ({ setRegistered }) => {
   const handleError = (err) => {
     const errorMessage = err.message ?? err;
     setNotification(errorMessage);
-    setTimeout(() => {
-      setIsLoading(false);
-    },1000);
+    setIsLoading(false);
   };
 
   const handleRegister = () => {
@@ -49,12 +47,13 @@ const RegisterForm = ({ setRegistered }) => {
       handleError("Passwords must match");
       return;
     }
+    //TODO: Add date picker. Users are created with a set date of birth.
     createUser({ username:username.value, password: password.value,dateOfBirth: new Date("10/10/1905") }).then(() => {
       userActions.logIn(username.value, password.value).then(() => {
         setIsLoading(false);
         redirect("/home");
-      }).catch(handleError);
-    }).catch(handleError);
+      }).catch(() => handleError("Error logging in"));
+    }).catch(() => handleError("User already exists"));
   };
 
 
